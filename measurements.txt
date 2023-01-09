@@ -1,0 +1,3 @@
+TPL.SequentialScanner: 6917ms
+TPL.ParallelScanner: 3047ms
+TPL.AsyncAwaitScanner: 3013ms
