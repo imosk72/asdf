@@ -1,0 +1,43 @@
+name: "da"
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Are you sure?
+        default: yes
+        required: true
+      launch-first:
+        description: da1
+        type: boolean
+        default: false
+        required: false
+      launch-second:
+        description: da2
+        type: boolean
+        default: false
+        required: false
+
+jobs:
+
+  first:
+    name: "Run first"
+    runs-on: ubuntu-latest
+    if: inputs.launch-first
+    steps:
+        - name: run1
+          run: |
+            echo "run first"
+            echo "first value=${{ inputs.launch-first }}"
+            echo "second value=${{ inputs.launch-second }}"
+    
+    
+  second:
+    name: "Run second"
+    runs-on: ubuntu-latest
+    if: inputs.launch-second
+    steps:
+      - name: run2
+        run: |
+            echo "run second"
+            echo "first value=${{ inputs.launch-first }}"
+            echo "second value=${{ inputs.launch-second }}"
